@@ -31,3 +31,20 @@ exports.showWithId = function(req, res) {
     }
   );
 };
+
+//menambahkan data mahasiswa
+exports.addMahasiswa = function(req, res) {
+  let nim = req.body.nim;
+  let nama = req.body.nama;
+  let jurusan = req.body.jurusan;
+
+  connection.query('INSERT INTO mahasiswa (nim, nama, jurusan) VALUES(?,?,?)', [nim, nama, jurusan],
+    function(error, rows, fields) {
+      if (error) {
+        connection.log(error);
+      } else {
+        response.ok('Berhasil Menambahkan Data', res);
+      }
+    }
+  );
+};
