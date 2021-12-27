@@ -8,4 +8,7 @@ module.exports = function(app) {
 
   app.route('/show')
     .get(jsonku.showMahasiswa);
+
+  app.route('/show/:id')
+    .get(jsonku.showWithId);
 }
