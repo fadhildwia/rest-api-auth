@@ -90,8 +90,12 @@ exports.login = function(req, res) {
         res.json({
           "Error": true,
           "Message": "Email atau Password Salah"
-        })
+        });
       }
     }
-  })
+  });
+}
+
+exports.secretpage = function(req, res) {
+  response.ok('Halaman ini hanya untuk user dengan role = 2', res);
 }
