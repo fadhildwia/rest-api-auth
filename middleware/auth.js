@@ -16,7 +16,7 @@ exports.registration = function(req, res) {
     created_at: new Date()
   }
 
-  let query = "SELECT email FROM ?? WHERE ??";
+  let query = "SELECT email FROM ?? WHERE ??=?";
   let table = ["user", "email", post.email];
 
   query = mysql.format(query, table);
@@ -37,7 +37,7 @@ exports.registration = function(req, res) {
           }
         });
       } else {
-        response.ok("Email sudah terdaftar");
+        response.ok("Email sudah terdaftar", res);
       }
     }
   })
