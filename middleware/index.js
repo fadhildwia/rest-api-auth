@@ -4,5 +4,6 @@ const router = express.Router();
 
 //daftarkan menu registration
 router.post('/api/v1/register', auth.registration);
+router.post('/api/v1/login', auth.login);
 
 module.exports = router;
